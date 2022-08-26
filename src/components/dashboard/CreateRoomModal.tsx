@@ -22,6 +22,7 @@ export const CreateRoomModal = ({ isOpen, onClose, onCreateRoom }: any) => {
         <Dialog.Panel className="mx-auto max-w-sm gap-4 flex flex-col rounded bg-white p-8">
           <Dialog.Title>Create a new room</Dialog.Title>
           <input
+            value={roomName}
             className="p-2"
             onChange={handleOnRoomNameChange}
             placeholder="Your Room Name"

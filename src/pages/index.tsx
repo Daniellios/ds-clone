@@ -8,7 +8,7 @@ import { trpc } from "../utils/trpc"
 
 const Home: NextPage = () => {
   // const hello = trpc.useQuery(["example.hello", { text: "from tRPC" }])
-  const [userName, setUserName] = useState<string>()
+  const [userName, setUserName] = useState<string>("")
   const { user, setUser } = useContext(UserContext)
   const createUser = trpc.useMutation("user.createUser")
   const router = useRouter()
@@ -41,6 +41,7 @@ const Home: NextPage = () => {
         </h1>
         <form className="flex flex-col gap-4" action="" onSubmit={handleSubmit}>
           <input
+            value={userName}
             onChange={handleSetUserName}
             type="text"
             placeholder="username"
